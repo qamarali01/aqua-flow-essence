@@ -17,24 +17,36 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 31% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 142 20% 85%;
+    --secondary-foreground: 142 31% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 142 15% 92%;
+    --muted-foreground: 142 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 195 80% 65%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 142 15% 88%;
+    --input: 142 15% 88%;
+    --ring: 142 31% 35%;
+
+    /* Custom design tokens */
+    --sage-light: 142 20% 85%;
+    --sage-medium: 142 25% 70%;
+    --sage-dark: 142 31% 35%;
+    --blue-gradient-start: 220 90% 65%;
+    --blue-gradient-end: 195 80% 65%;
+    
+    --gradient-sage: linear-gradient(135deg, hsl(var(--sage-light)), hsl(var(--sage-medium)));
+    --gradient-blue: linear-gradient(135deg, hsl(var(--blue-gradient-start)), hsl(var(--blue-gradient-end)));
+    --shadow-soft: 0 10px 30px -10px hsl(var(--sage-dark) / 0.1);
+    --shadow-elevated: 0 20px 40px -10px hsl(var(--sage-dark) / 0.15);
 
     --radius: 0.5rem;
 
