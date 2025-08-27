@@ -19,9 +19,10 @@ export const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Home</a>
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">About</a>
-          <a href="#" className="text-primary font-medium">Services</a>
+          <a href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</a>
+          <a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Water Services</a>
+          <a href="/energy" className="text-muted-foreground hover:text-primary transition-colors">Energy</a>
+          <a href="/ancillary-services" className="text-muted-foreground hover:text-primary transition-colors">Business Services</a>
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
 
