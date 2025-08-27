@@ -10,50 +10,70 @@ const businessAreas = [
     title: "Renewables & Hydrogen",
     icon: <Leaf className="w-8 h-8" />,
     description: "Sustainable energy solutions for the future",
-    details: "Comprehensive renewable energy development including solar, wind, and emerging hydrogen technologies."
+    keyServices: [
+      "Solar and wind farm development",
+      "Hydrogen production and storage systems",
+      "Grid integration strategies",
+      "Energy storage solutions"
+    ]
   },
   {
     title: "Transmission & Distribution", 
     icon: <Zap className="w-8 h-8" />,
     description: "Power grid infrastructure and optimization",
-    details: "Design and implementation of efficient power transmission and distribution networks."
+    keyServices: [
+      "Grid modernization and smart grid implementation",
+      "Transmission line planning and design",
+      "Distribution network optimization",
+      "Power quality management"
+    ]
   },
   {
     title: "Power Markets",
     icon: <Building2 className="w-8 h-8" />,
     description: "Energy market analysis and strategy",
-    details: "Market intelligence and strategic advisory for energy trading and power markets."
+    keyServices: [
+      "Market entry strategies",
+      "Energy trading platforms",
+      "Regulatory compliance support",
+      "Risk assessment and management"
+    ]
   },
   {
     title: "Just Energy Transition",
     icon: <Globe className="w-8 h-8" />,
     description: "Equitable transformation to clean energy",
-    details: "Supporting communities and industries in transitioning to sustainable energy systems."
+    keyServices: [
+      "Community engagement programs",
+      "Workforce transition planning",
+      "Social impact assessments",
+      "Stakeholder coordination"
+    ]
   },
   {
     title: "Energy Sufficiency",
     icon: <Battery className="w-8 h-8" />,
     description: "Optimal energy use and efficiency",
-    details: "Strategies for energy optimization and demand-side management solutions."
+    keyServices: [
+      "Energy efficiency audits",
+      "Demand response programs",
+      "Load management strategies",
+      "Energy conservation planning"
+    ]
   },
   {
     title: "Climate Finance",
     icon: <DollarSign className="w-8 h-8" />,
     description: "Funding mechanisms for climate projects",
-    details: "Financial structuring and investment strategies for climate and energy initiatives."
+    keyServices: [
+      "Green bond structuring",
+      "Carbon credit development",
+      "Climate risk assessments",
+      "Investment facilitation"
+    ]
   }
 ];
 
-const services = [
-  "Engineering, procurement, and supervision of renewable energy plants, transmission systems, and distribution networks",
-  "Project preparatory consulting services",
-  "Techno-economic assessments and feasibility studies", 
-  "Environmental, social, and health and safety (ESHS) assessments",
-  "Policy and regulatory advisory services",
-  "Development of strategic frameworks and roadmaps",
-  "Power utility management services",
-  "Capacity development and training"
-];
 
 const Energy = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -119,7 +139,15 @@ const Energy = () => {
                   
                   {expandedCard === index && (
                     <div className="mt-6 pt-6 border-t border-sage-medium/20">
-                      <p className="text-muted-foreground leading-relaxed">{area.details}</p>
+                      <h4 className="font-semibold text-primary mb-4">Key Services:</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {area.keyServices.map((service, serviceIndex) => (
+                          <div key={serviceIndex} className="flex items-start gap-2">
+                            <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                            <span className="text-muted-foreground text-sm">{service}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </CardContent>
@@ -129,26 +157,62 @@ const Energy = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-accent/5 to-sage-light/20">
+      {/* Additional Capabilities */}
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-6">Our Energy Services</h2>
+            <h2 className="text-4xl font-bold text-primary mb-6">Additional Capabilities</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive energy solutions from planning to implementation
+              Supporting services that enhance our core energy management offerings
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4 p-6 bg-white/70 backdrop-blur-sm rounded-lg border border-sage-medium/20 hover:shadow-[--shadow-soft] transition-all duration-300"
-              >
-                <div className="w-3 h-3 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">{service}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-gradient-to-br from-sage-light/30 to-white p-8 rounded-lg border border-sage-medium/20">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 bg-sage-medium/20 rounded-lg">
+                  <Zap className="w-8 h-8 text-sage-dark" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary">Technical Excellence</h3>
               </div>
-            ))}
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Techno-economic assessments and studies</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Environmental, Social, Health and Safety (ESHS) assessments</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Feasibility studies and due diligence</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-accent/5 to-white p-8 rounded-lg border border-accent/20">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 bg-accent/10 rounded-lg">
+                  <Building2 className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary">Strategic Advisory</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-sage-medium mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Policy and regulatory advisory services</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-sage-medium mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Capacity development and training</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-sage-medium mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground">Institutional strengthening</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
